@@ -29,16 +29,16 @@ class Database:
 
 
 class Video:
-    def __init__(self, video_id, frames, json_meta_data):
+    def __init__(self, video_id, json_meta_data):
         self.id = video_id
-        self.frames = frames  # Expecting a list of Frame objects
+        self.frames = Frame  # an object of the class Frame
         self.json_meta_data = json_meta_data
 
     def get_frame(self, timestamp):
         for frame in self.frames:
             if frame.start_time_stamp <= timestamp < frame.end_time_stamp:
                 return frame
-        # If no frame is found, raise an error similar to Java's IndexOutOfBoundsException
+        # If no frame is found, raise an error
         raise IndexError("No frame found for the given timestamp")
 
 

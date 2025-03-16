@@ -37,6 +37,8 @@ class Video {
     String id;
     Frame[] frames;
     String jsonMetaData;
+    WatchedVideo video;
+
 
     public Frame getFrame(int timestamp) {
         for (int i = 0; i < frames.length; i++) {
@@ -76,3 +78,4 @@ class WatchedVideo {
         return seekTime;
     }
 }
+
